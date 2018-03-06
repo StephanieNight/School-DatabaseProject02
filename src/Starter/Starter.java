@@ -11,6 +11,8 @@ import Bussiness.BusinessFacade;
 import Data.DataFacade;
 import Presentation.UI;
 import Aq.IBusiness;
+import Aq.ISQLCom;
+import Data.PrograteSQLCom;
 
 /**
  *
@@ -19,8 +21,8 @@ import Aq.IBusiness;
 public class Starter {
 
     public static void main(String[] args) {
-        
-        IData data = new DataFacade();
+        ISQLCom sql = new PrograteSQLCom();
+        IData data = new DataFacade(sql);
         IBusiness business = new BusinessFacade();
         business.injectData(data);
         IGUI ui = new UI();

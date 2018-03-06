@@ -19,16 +19,16 @@ public class DataFacade implements IData{
     {
         this.SQLCom = sqlCommunications;
     }
-    public IDataResult[] getCouch() {
+    public IDataResult getCouch() {
        return SQLCom.getCouch();
     }
-    public IDataResult[] getPeople() {   
+    public IDataResult getPeople() {   
         return SQLCom.getPeople();
     }
-    public IDataResult[] getTeams() {
+    public IDataResult getTeams() {
            return SQLCom.getTeams();
     }
-    public IDataResult[] getTournaments() {
+    public IDataResult getTournaments() {
          return SQLCom.getTournaments();  
     }    
 }

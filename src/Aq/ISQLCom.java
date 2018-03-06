@@ -9,8 +9,8 @@ package Aq;
  * @author Stephanie
  */
 public interface ISQLCom {
-    public IDataResult[] getCouch();
-    public IDataResult[] getPeople();
-    public IDataResult[] getTeams();
-    public IDataResult[] getTournaments();
+    public IDataResult getCouch();
+    public IDataResult getPeople();
+    public IDataResult getTeams();
+    public IDataResult getTournaments();
 }
