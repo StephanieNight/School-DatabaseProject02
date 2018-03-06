@@ -9,9 +9,8 @@ import java.util.Set;
 
 /**
  *
- * @author Markb
+ * @author Stephanie
  */
-public interface IData {
-
-    
+public interface IDataResult {
+        public Set getData();
 }

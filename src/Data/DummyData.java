@@ -65,7 +65,7 @@ public class DummyData {
                 System.out.println(rs.getString(2) + " ");
             }
             rs.close();
-            //st.close();
+            st.close();
 
         } catch (Exception e) {
             System.out.println(e);

@@ -5,13 +5,12 @@
  */
 package Aq;
 
-import java.util.Set;
-
 /**
- *
- * @author Markb
+ * @author Stephanie
  */
-public interface IData {
-
-    
+public interface ISQLCom {
+    public IDataResult[] getCouch();
+    public IDataResult[] getPeople();
+    public IDataResult[] getTeams();
+    public IDataResult[] getTournaments();
 }

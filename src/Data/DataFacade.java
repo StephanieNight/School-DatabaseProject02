@@ -6,11 +6,29 @@
 package Data;
 
 import Aq.IData;
+import Aq.IDataResult;
+import Aq.ISQLCom;
 
 /**
  *
  * @author Markb
  */
 public class DataFacade implements IData{
-    
+    private ISQLCom SQLCom;
+    public DataFacade(ISQLCom sqlCommunications)
+    {
+        this.SQLCom = sqlCommunications;
+    }
+    public IDataResult[] getCouch() {
+       return SQLCom.getCouch();
+    }
+    public IDataResult[] getPeople() {   
+        return SQLCom.getPeople();
+    }
+    public IDataResult[] getTeams() {
+           return SQLCom.getTeams();
+    }
+    public IDataResult[] getTournaments() {
+         return SQLCom.getTournaments();  
+    }    
 }
