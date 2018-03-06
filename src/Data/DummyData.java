@@ -58,14 +58,14 @@ public class DummyData {
             PreparedStatement p = db.prepareStatement(str);
             
             ResultSet rs = p.executeQuery();
-            rs.gets
+            //rs.gets
             while (rs.next()) {
 
                 System.out.print(rs.getString(1) + " ");
                 System.out.println(rs.getString(2) + " ");
             }
             rs.close();
-            st.close();
+            //st.close();
 
         } catch (Exception e) {
             System.out.println(e);

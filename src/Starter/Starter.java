@@ -24,8 +24,7 @@ public class Starter {
         IBusiness business = new BusinessFacade();
         business.injectData(data);
         IGUI ui = new UI();
-        ui.injectBusiness(business);
-        
+        ui.injectBusiness(business);       
         
         System.out.println("Ready to launch system");
         ui.startApplication(args);
