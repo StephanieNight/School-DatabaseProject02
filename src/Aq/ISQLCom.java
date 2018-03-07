@@ -9,9 +9,9 @@ package Aq;
  * @author Stephanie
  */
 public interface ISQLCom {
-    public static final char SPLIT_CHAR ='/';
-    public IDataResult getCouch();
+    public IDataResult getCoach();
     public IDataResult getPeople();
     public IDataResult getTeams();
     public IDataResult getTournaments();
+    public IDataResult getWinners();
 }

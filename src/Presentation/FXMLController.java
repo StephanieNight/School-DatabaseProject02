@@ -5,12 +5,17 @@
  */
 package Presentation;
 
+import Aq.IData;
+import Data.DataFacade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 
 /**
@@ -56,6 +61,21 @@ public class FXMLController implements Initializable {
     private TableColumn<?, ?> winAmount;
     @FXML
     private Button btnGetTestData;
+    @FXML
+    private Tab peopleTab;
+    @FXML
+    private Tab teamsTab;
+    @FXML
+    private Tab tournamentsTab;
+    @FXML
+    private Tab coachesTab;
+    @FXML
+    private Tab winnersTab;
+    @FXML
+    private TabPane tabPane;
+    
+    
+    private IData data = new DataFacade();
 
     /**
      * Initializes the controller class.
@@ -66,7 +86,17 @@ public class FXMLController implements Initializable {
     }    
 
     @FXML
-    private void btnGetTestDataOnClicled(ActionEvent event) {
+    private void OnSelectTab(Event event) {
+        int currentTab = tabPane.getSelectionModel().getSelectedIndex();
+        
+        switch(currentTab){
+            case 0:
+                data.getPeople().getData();
+                
+                
+        }
+                
+                
     }
     
 }

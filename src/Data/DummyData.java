@@ -19,6 +19,14 @@ import java.util.logging.Logger;
 public class DummyData {
 
     File file;
+    
+    public void loadDummyData(){
+        loadPeople();
+        loadTeams();
+        loadTournaments();
+        loadPlaysFor();
+        loadPlaysIn();
+    }
 
     public void loadPeople() {
 

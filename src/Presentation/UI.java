@@ -6,7 +6,8 @@
 package Presentation;
 
 import Aq.IGUI;
-import Aq.IBusiness;
+
+import Aq.IData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,11 +20,11 @@ import javafx.stage.Stage;
  */
 public class UI extends Application implements IGUI{
     
-    private IBusiness bussiness;
-
+    private IData data;
+    
     @Override
-    public void injectBusiness(IBusiness businessLayer) {
-        this.bussiness = businessLayer;
+    public void injectData(IData datalayer) {
+        this.data = datalayer;
     }
 
     @Override

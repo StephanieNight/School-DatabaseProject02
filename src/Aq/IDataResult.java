@@ -12,5 +12,6 @@ import java.util.Set;
  * @author Stephanie
  */
 public interface IDataResult {
+        public static final char SPLIT_CHAR ='/';
         public Set getData();
 }

@@ -11,6 +11,6 @@ package Aq;
  */
 public interface IGUI {
 
-    public void injectBusiness(IBusiness business);
+    public void injectData(IData datalayer);
     public void startApplication(String[] args);    
 }

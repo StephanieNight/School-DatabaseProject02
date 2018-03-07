@@ -16,18 +16,18 @@ import java.sql.ResultSet;
  *
  * @author Stephanie
  */
-public class PrograteSQLCom implements ISQLCom{
+public class PostgreSQLCom implements ISQLCom{
     private final String sqlConnectionString;
     private final String username;
     private final String password;
-    public PrograteSQLCom()
+    public PostgreSQLCom()
     {
         this.sqlConnectionString = "jdbc:postgresql://dumbo.db.elephantsql.com:5432/vlnyuiox";
         this.username = "vlnyuiox";
         this.password = "I_hhy6YhTcdjh87QHyXvfXhY8Q_rr1yu";
     }
     @Override
-    public IDataResult getCouch() {
+    public IDataResult getCoach() {
         try {
             String statement = "Select * from Team";
             Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
@@ -105,6 +105,11 @@ public class PrograteSQLCom implements ISQLCom{
             System.out.println(e);
         }
         return null;        
+    }
+
+    @Override
+    public IDataResult getWinners() {
+        return null;
     }
     
 }

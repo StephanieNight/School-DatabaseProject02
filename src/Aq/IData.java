@@ -12,6 +12,11 @@ import java.util.Set;
  * @author Markb
  */
 public interface IData {
-
+    
+    public IDataResult getCoach();
+    public IDataResult getPeople();
+    public IDataResult getTeams();
+    public IDataResult getTournaments();
+    public IDataResult getWinners();
     
 }
