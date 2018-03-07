@@ -22,6 +22,11 @@ public class PostgreSQLCom implements ISQLCom{
     private final String password;
     public PostgreSQLCom()
     {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (java.lang.ClassNotFoundException e) {
+            System.out.println(e);
+        }
         this.sqlConnectionString = "jdbc:postgresql://dumbo.db.elephantsql.com:5432/vlnyuiox";
         this.username = "vlnyuiox";
         this.password = "I_hhy6YhTcdjh87QHyXvfXhY8Q_rr1yu";
@@ -48,6 +53,7 @@ public class PostgreSQLCom implements ISQLCom{
     }
     @Override
     public IDataResult getPeople() {
+        IDataResult r = new SQLDataResult();
        try {
             String statement = "";
             Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
@@ -64,7 +70,7 @@ public class PostgreSQLCom implements ISQLCom{
         catch (Exception e) {
             System.out.println(e);
         }
-        return null;
+        return r;
     }
     @Override
     public IDataResult getTeams() {  
