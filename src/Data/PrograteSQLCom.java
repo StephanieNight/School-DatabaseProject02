@@ -29,7 +29,7 @@ public class PrograteSQLCom implements ISQLCom{
     @Override
     public IDataResult getCouch() {
         try {
-            String statement = "";
+            String statement = "Select * from Team";
             Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
             PreparedStatement p = db.prepareStatement(statement);            
             ResultSet rs = p.executeQuery();
@@ -48,17 +48,63 @@ public class PrograteSQLCom implements ISQLCom{
     }
     @Override
     public IDataResult getPeople() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       try {
+            String statement = "";
+            Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
+            PreparedStatement p = db.prepareStatement(statement);            
+            ResultSet rs = p.executeQuery();
+            //rs.gets
+            while (rs.next()) {
 
+                System.out.print(rs.getString(1) + " ");
+                System.out.println(rs.getString(2) + " ");
+            }
+            rs.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
     @Override
-    public IDataResult getTeams() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public IDataResult getTeams() {  
+           try {
+            String statement = "";
+            Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
+            PreparedStatement p = db.prepareStatement(statement);            
+            ResultSet rs = p.executeQuery();
+            //rs.gets
+            while (rs.next()) {
 
+                System.out.print(rs.getString(1) + " ");
+                System.out.println(rs.getString(2) + " ");
+            }
+            rs.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;   
+    }
     @Override
     public IDataResult getTournaments() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       try {
+            String statement = "";
+            Connection db = DriverManager.getConnection(sqlConnectionString, username, password);            
+            PreparedStatement p = db.prepareStatement(statement);            
+            ResultSet rs = p.executeQuery();
+            //rs.gets
+            while (rs.next()) {
+
+                System.out.print(rs.getString(1) + " ");
+                System.out.println(rs.getString(2) + " ");
+            }
+            rs.close();
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;        
     }
     
 }

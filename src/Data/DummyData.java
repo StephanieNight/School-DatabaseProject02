@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class DummyData {
 
-    File file = null;
+    File file;
 
     public void loadPeople() {
 
