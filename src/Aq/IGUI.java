@@ -12,7 +12,5 @@ package Aq;
 public interface IGUI {
 
     public void injectBusiness(IBusiness business);
-
-    public void startApplication(String[] args);
-    
+    public void startApplication(String[] args);    
 }
