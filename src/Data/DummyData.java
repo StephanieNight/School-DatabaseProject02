@@ -20,7 +20,7 @@ public class DummyData {
 
     File file = null;
 
-    public void insertPeople() {
+    public void loadPeople() {
 
         String line;
         String[] tokens;
@@ -30,7 +30,9 @@ public class DummyData {
                 line = sc.nextLine();
                 tokens = line.split("/");
                 System.out.println(tokens[0]);
-
+                
+                insertData("People", tokens[0] + ", " + tokens[1] + ", " + tokens[2]);
+                
             }
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getCause());
@@ -38,8 +40,92 @@ public class DummyData {
         }
 
     }
+    
+        public void loadTeams() {
 
-    public void insertData(String str) {
+        String line;
+        String[] tokens;
+        file = new File("Teams.txt");
+        try (Scanner sc = new Scanner(file)) {
+            while (sc.hasNext()) {
+                line = sc.nextLine();
+                tokens = line.split("/");
+                System.out.println(tokens[0]);
+                
+                insertData("Teams", tokens[0] + ", " + tokens[1] + ", " + tokens[2]);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+        }
+
+    }
+        
+        public void loadTournaments() {
+
+        String line;
+        String[] tokens;
+        file = new File("Tournaments.txt");
+        try (Scanner sc = new Scanner(file)) {
+            while (sc.hasNext()) {
+                line = sc.nextLine();
+                tokens = line.split("/");
+                System.out.println(tokens[0]);
+                
+                insertData("Tournaments", tokens[0] + ", " + tokens[1] + ", " + tokens[2] + ", " + tokens[3]);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+        }
+
+    }
+        
+        public void loadPlaysFor() {
+
+        String line;
+        String[] tokens;
+        file = new File("PlaysFor.txt");
+        try (Scanner sc = new Scanner(file)) {
+            while (sc.hasNext()) {
+                line = sc.nextLine();
+                tokens = line.split("/");
+                System.out.println(tokens[0]);
+                
+                insertData("PlaysFor", tokens[0] + ", " + tokens[1]);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+        }
+
+    }
+        
+        public void loadPlaysIn() {
+
+        String line;
+        String[] tokens;
+        file = new File("PlaysIn.txt");
+        try (Scanner sc = new Scanner(file)) {
+            while (sc.hasNext()) {
+                line = sc.nextLine();
+                tokens = line.split("/");
+                System.out.println(tokens[0]);
+                
+                insertData("PlaysIn", tokens[0] + ", " + tokens[1] + ", " + tokens[2]);
+                
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getCause());
+            System.out.println(ex.getMessage());
+        }
+
+    }
+    
+    public void insertData(String table, String str) {
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -54,8 +140,8 @@ public class DummyData {
         try {
             Connection db = DriverManager.getConnection(url, username, password);
             
-            
-            PreparedStatement p = db.prepareStatement(str);
+            String query = "INSERT INTO" + table + "VALUES(" + str + ");";
+            PreparedStatement p = db.prepareStatement(query);
             
             ResultSet rs = p.executeQuery();
             //rs.gets
