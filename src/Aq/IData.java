@@ -18,5 +18,6 @@ public interface IData {
     public IDataResult getTeams();
     public IDataResult getTournaments();
     public IDataResult getWinners();
+    public void intializeData();
     
 }

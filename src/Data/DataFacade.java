@@ -23,7 +23,7 @@ public class DataFacade implements IData {
     }
 
     public DataFacade() {
-        SQLCom = new PostgreSQLCom();
+        //SQLCom = new PostgreSQLCom();
     }
 
     public IDataResult getCoach() {
@@ -70,5 +70,10 @@ public class DataFacade implements IData {
             r = SQLCom.getWinners();
         }
         return r;
+    }
+
+    @Override
+    public void intializeData() {
+        //dummy.loadDummyData();
     }
 }

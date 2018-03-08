@@ -27,9 +27,9 @@ public class PostgreSQLCom implements ISQLCom{
         } catch (java.lang.ClassNotFoundException e) {
             System.out.println(e);
         }
-        this.sqlConnectionString = "jdbc:postgresql://dumbo.db.elephantsql.com:5432/vlnyuiox";
-        this.username = "vlnyuiox";
-        this.password = "I_hhy6YhTcdjh87QHyXvfXhY8Q_rr1yu";
+        this.sqlConnectionString = "jdbc:postgresql://dumbo.db.elephantsql.com:5432/exvsnrqs";
+        this.username = "exvsnrqs";
+        this.password = "ufuOcmXNXh82kTeFS1bbglbe4-uau7dW";
     }
     @Override
     public IDataResult getCoach() {

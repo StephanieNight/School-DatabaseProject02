@@ -19,10 +19,10 @@ import Data.PostgreSQLCom;
 public class Starter {
 
     public static void main(String[] args) {
-        ISQLCom sql = new PostgreSQLCom();
+        //ISQLCom sql = new PostgreSQLCom();
         
         
-        IData data = new DataFacade(sql);
+        IData data = new DataFacade();
         IGUI ui = new UI();
         ui.injectData(data);     
         

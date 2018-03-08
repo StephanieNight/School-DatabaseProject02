@@ -82,7 +82,7 @@ public class FXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        data.intializeData();
     }    
 
     @FXML
@@ -91,12 +91,16 @@ public class FXMLController implements Initializable {
         
         switch(currentTab){
             case 0:
-                data.getPeople().getData();
+                
                 
                 
         }
                 
                 
+    }
+
+    @FXML
+    private void btnGetTestDataOnClicled(ActionEvent event) {
     }
     
 }
