@@ -9,6 +9,8 @@ import Aq.IData;
 import Data.DataFacade;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Set;
+import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -60,8 +63,6 @@ public class FXMLController implements Initializable {
     @FXML
     private TableColumn<?, ?> winAmount;
     @FXML
-    private Button btnGetTestData;
-    @FXML
     private Tab peopleTab;
     @FXML
     private Tab teamsTab;
@@ -74,24 +75,46 @@ public class FXMLController implements Initializable {
     @FXML
     private TabPane tabPane;
     
+    Observabl<String> obsSet;
     
     private IData data = new DataFacade();
+    @FXML
+    private TextField numberField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        data.intializeData();
+        System.out.println(data.getCoach());
     }    
 
     @FXML
     private void OnSelectTab(Event event) {
+        Set s;
         int currentTab = tabPane.getSelectionModel().getSelectedIndex();
         
         switch(currentTab){
             case 0:
+                obsSet = (ObservableSet<String>) data.getPeople().getData();
+                peopleName.setCell;
+                break;
+            case 1:
+                s = data.getTeams().getData().toArray();
                 
+                break;
+            case 2:
+                s = data.getTournaments().getData();
+                
+                break;
+            case 3:
+                s = data.getCoach().getData();
+                
+                break;
+            case 4:
+                s = data.getWinners().getData();
+                
+                break;
                 
                 
         }
@@ -100,7 +123,7 @@ public class FXMLController implements Initializable {
     }
 
     @FXML
-    private void btnGetTestDataOnClicled(ActionEvent event) {
+    private void getBtnClicked(ActionEvent event) {
     }
     
 }

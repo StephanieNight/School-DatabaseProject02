@@ -63,8 +63,8 @@
                         <TableColumn fx:id="tourWinner" editable="false" prefWidth="163.0" text="Winner" />
                      </columns>
                   </TableView>
-                  <TextField layoutX="213.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" text="Least number of participants" />
-                  <Button layoutX="403.0" layoutY="73.0" mnemonicParsing="false" text="Button" />
+                  <TextField layoutX="213.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Button layoutX="403.0" layoutY="73.0" mnemonicParsing="false" text="Get" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -82,7 +82,6 @@
                       <TableColumn fx:id="cTeam" editable="false" prefWidth="260.0" text="Team" />
                     </columns>
                   </TableView>
-                  <Button fx:id="btnGetTestData" layoutX="518.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnGetTestDataOnClicled" text="Get Test data" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

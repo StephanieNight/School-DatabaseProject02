@@ -5,13 +5,12 @@
         <group>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Aq/IData.java</file>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Presentation/FXMLController.java</file>
-            <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Data/PostgreSQLCom.java</file>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Presentation/UI.java</file>
+            <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Data/PostgreSQLCom.java</file>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Aq/IDataResult.java</file>
-            <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Starter/Starter.java</file>
-            <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Data/DummyData.java</file>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Aq/ISQLCom.java</file>
             <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Data/DataFacade.java</file>
+            <file>file:/C:/Users/Markb/Documents/NetBeansProjects/S2DatabaseProject/src/Data/SQLDataResult.java</file>
         </group>
     </open-files>
 </project-private>
