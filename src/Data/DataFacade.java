@@ -5,15 +5,15 @@
  */
 package Data;
 
-import Aq.IData;
 import Aq.IDataResult;
 import Aq.ISQLCom;
+import Aq.IDataFacade;
 
 /**
  *
  * @author Markb
  */
-public class DataFacade implements IData {
+public class DataFacade implements IDataFacade {
 
     private ISQLCom SQLCom;
 
@@ -43,7 +43,7 @@ public class DataFacade implements IData {
     }
 
     public IDataResult getTournaments() {
-        IDataResult r = SQLCom.getTournaments();
+        IDataResult r = SQLCom.getTournaments(2);
         return r;
     }
 

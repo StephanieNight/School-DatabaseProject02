@@ -12,6 +12,11 @@ import java.util.Set;
  * @author Stephanie
  */
 public interface IDataResult {
-        public static final char SPLIT_CHAR ='/';
-        public Set getData();
+    public static final char SPLIT_CHAR ='/';
+    public Set<String> getData();
+    public void addData(String dataline);
+    public void addData(String data01,String data02);
+    public void addData(String data01,String data02,String data03);
+    public void addData(String data01,String data02,String data03,String data04);
+    public void addData(String data01,String data02,String data03,String data04,String data05);
 }

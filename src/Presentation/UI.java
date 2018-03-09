@@ -7,12 +7,12 @@ package Presentation;
 
 import Aq.IGUI;
 
-import Aq.IData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import Aq.IDataFacade;
 
 /**
  *
@@ -20,10 +20,10 @@ import javafx.stage.Stage;
  */
 public class UI extends Application implements IGUI{
     
-    private IData data;
+    private IDataFacade data;
     
     @Override
-    public void injectData(IData datalayer) {
+    public void injectData(IDataFacade datalayer) {
         this.data = datalayer;
     }
 

@@ -11,7 +11,7 @@ import java.util.Set;
  *
  * @author Markb
  */
-public interface IData {
+public interface IDataFacade {
     
     public IDataResult getCoach();
     public IDataResult getPeople();

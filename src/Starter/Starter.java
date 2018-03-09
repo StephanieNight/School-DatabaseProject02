@@ -5,12 +5,10 @@
  */
 package Starter;
 
-import Aq.IData;
 import Aq.IGUI;
 import Data.DataFacade;
 import Presentation.UI;
-import Aq.ISQLCom;
-import Data.PostgreSQLCom;
+import Aq.IDataFacade;
 
 /**
  *
@@ -22,7 +20,7 @@ public class Starter {
         //ISQLCom sql = new PostgreSQLCom();
         
         
-        IData data = new DataFacade();
+        IDataFacade data = new DataFacade();
         IGUI ui = new UI();
         ui.injectData(data);     
         

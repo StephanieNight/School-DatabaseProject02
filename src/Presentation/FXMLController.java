@@ -5,7 +5,6 @@
  */
 package Presentation;
 
-import Aq.IData;
 import Data.DataFacade;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +19,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
+import Aq.IDataFacade;
 
 /**
  * FXML Controller class
@@ -77,7 +77,7 @@ public class FXMLController implements Initializable {
     
     
     
-    private IData data = new DataFacade();
+    private IDataFacade data = new DataFacade();
     @FXML
     private TextField numberField;
 

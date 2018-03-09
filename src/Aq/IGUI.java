@@ -11,6 +11,6 @@ package Aq;
  */
 public interface IGUI {
 
-    public void injectData(IData datalayer);
+    public void injectData(IDataFacade datalayer);
     public void startApplication(String[] args);    
 }

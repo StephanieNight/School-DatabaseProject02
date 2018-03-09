@@ -12,6 +12,6 @@ public interface ISQLCom {
     public IDataResult getCoach();
     public IDataResult getPeople();
     public IDataResult getTeams();
-    public IDataResult getTournaments();
+    public IDataResult getTournaments(int n);
     public IDataResult getWinners();
 }
