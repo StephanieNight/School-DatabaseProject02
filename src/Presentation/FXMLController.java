@@ -75,12 +75,14 @@ public class FXMLController implements Initializable {
     @FXML
     private TabPane tabPane;
     
-    Observabl<String> obsSet;
+    
     
     private IData data = new DataFacade();
     @FXML
     private TextField numberField;
 
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -96,11 +98,11 @@ public class FXMLController implements Initializable {
         
         switch(currentTab){
             case 0:
-                obsSet = (ObservableSet<String>) data.getPeople().getData();
-                peopleName.setCell;
+                data.getPeople().getData();
+                
                 break;
             case 1:
-                s = data.getTeams().getData().toArray();
+                data.getTeams().getData().toArray();
                 
                 break;
             case 2:

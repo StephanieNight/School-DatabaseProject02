@@ -63,8 +63,8 @@
                         <TableColumn fx:id="tourWinner" editable="false" prefWidth="163.0" text="Winner" />
                      </columns>
                   </TableView>
-                  <TextField layoutX="213.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" />
-                  <Button layoutX="403.0" layoutY="73.0" mnemonicParsing="false" text="Get" />
+                  <TextField fx:id="numberField" layoutX="213.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Button layoutX="403.0" layoutY="73.0" mnemonicParsing="false" onAction="#getBtnClicked" text="Get" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
