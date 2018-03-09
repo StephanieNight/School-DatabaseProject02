@@ -1,0 +1,13 @@
+#folder
+
+
+#Class
+*.class
+
+build/built-jar.properties
+*.html
+dist/DatabaseProject.jar
+dist/lib/postgresql-42.2.1.jar
+nbproject/private/private.properties
+nbproject/private/private.xml
+dist/DatabaseProject.html
