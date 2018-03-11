@@ -51,7 +51,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TableView prefHeight="200.0" prefWidth="505.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="tb_tournaments" prefHeight="200.0" prefWidth="505.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
                      <columns>
                         <TableColumn editable="false" prefWidth="150.0" text="Name" />
                         <TableColumn editable="false" prefWidth="75.0" text="Date" />
@@ -72,10 +72,10 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TableView layoutX="200.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="tb_coach" layoutX="200.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
                     <columns>
-                      <TableColumn fx:id="cCoach" editable="false" prefWidth="300.0" text="Coach" />
-                      <TableColumn fx:id="cTeam" editable="false" prefWidth="260.0" text="Team" />
+                      <TableColumn editable="false" prefWidth="300.0" text="Coach" />
+                      <TableColumn editable="false" prefWidth="260.0" text="Team" />
                     </columns>
                   </TableView>
                </children>
@@ -92,11 +92,11 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <TableView layoutX="200.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="tb_Winners" layoutX="200.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
                     <columns>
-                      <TableColumn fx:id="winPerson" editable="false" prefWidth="200.0" text="Person" />
-                      <TableColumn fx:id="winTeam" editable="false" prefWidth="200.0" text="Team" />
-                        <TableColumn fx:id="winAmount" editable="false" prefWidth="139.0" text="Tournaments won" />
+                      <TableColumn editable="false" prefWidth="200.0" text="Person" />
+                      <TableColumn editable="false" prefWidth="200.0" text="Team" />
+                        <TableColumn editable="false" prefWidth="139.0" text="Tournaments won" />
                     </columns>
                   </TableView>
                </children>

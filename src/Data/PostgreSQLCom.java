@@ -96,15 +96,16 @@ public class PostgreSQLCom implements ISQLCom{
     public IDataResult getTeamsAndPlayerCount() {
         IDataResult r = new SQLDataResult();
         try {
-            String statement =  "SELECT Team, COUNT(Player) \n" +
-                                "FROM PlaysFor\n" +
-                                "GROUP BY Team\n";
+            String statement =  "SELECT Team, Country, Coach, COUNT(Team) \n" +
+                                "FROM PlaysFor, Teams\n" +
+                                "WHERE Team = Name\n" +
+                                "GROUP BY Team, Country, coach";
             Connection db = DriverManager.getConnection(sqlConnectionString, username, password);
             PreparedStatement p = db.prepareStatement(statement);
             ResultSet rs = p.executeQuery();
             //rs.gets
             while (rs.next()) {
-                r.addData(rs.getString(1),rs.getString(2));
+                r.addData(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
             }
             db.close();
             rs.close();

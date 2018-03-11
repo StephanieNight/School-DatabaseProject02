@@ -15,32 +15,26 @@ public class Teams implements ITeams{
     private String name; 
     private String country;
     private String coach;
-    private String Players;
+    private String players;
 
     public Teams(String name, String country, String coach, String Players) {
         this.name = name;
         this.country = country;
         this.coach = coach;
-        this.Players = Players;
+        this.players = Players;
     }    
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return name;
     }
 
     @Override
-    public String getCountry() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public String getCountry() {return country; }
 
     @Override
-    public String getCoach() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public String getCoach() {return coach; }
 
     @Override
-    public String getPlayers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public String getPlayers() {return players;  }
     
 }

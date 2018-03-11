@@ -30,16 +30,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class FXMLController implements Initializable {
 
     @FXML
-    private TableColumn<?, ?> cCoach;
-    @FXML
-    private TableColumn<?, ?> cTeam;
-    @FXML
-    private TableColumn<?, ?> winPerson;
-    @FXML
-    private TableColumn<?, ?> winTeam;
-    @FXML
-    private TableColumn<?, ?> winAmount;
-    @FXML
     private Tab peopleTab;
     @FXML
     private Tab teamsTab;
@@ -59,6 +49,12 @@ public class FXMLController implements Initializable {
     private TableView<Person> Tb_People;
     @FXML
     private TableView<Teams> Tb_Teams;
+    @FXML
+    private TableView<?> tb_tournaments;
+    @FXML
+    private TableView<?> tb_coach;
+    @FXML
+    private TableView<?> tb_Winners;
 
     
     
@@ -75,13 +71,18 @@ public class FXMLController implements Initializable {
         TableColumn emailCol = new TableColumn("Email");
         emailCol.setCellValueFactory(new PropertyValueFactory<Person, String>("email"));
         TableColumn TeamCol = new TableColumn("Team");
-        TeamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("team"));        
-        /*TableColumn coantryCol = new TableColumn("Country");
-        nickNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("country")); 
+        TeamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("team"));  
+        
+        
+        TableColumn coantryCol = new TableColumn("Country");
+        coantryCol.setCellValueFactory(new PropertyValueFactory<Person, String>("country")); 
         TableColumn coachCol = new TableColumn("Coach");
-        emailCol.setCellValueFactory(new PropertyValueFactory<Person, String>("coach"));
+        coachCol.setCellValueFactory(new PropertyValueFactory<Person, String>("coach"));
         TableColumn playerCol = new TableColumn("Players");
-        TeamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("player"));
+        playerCol.setCellValueFactory(new PropertyValueFactory<Person, String>("players"));
+        
+        
+        /*
         TableColumn dateCol = new TableColumn("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("name")); 
         TableColumn prizeCol = new TableColumn("Name");
@@ -97,12 +98,14 @@ public class FXMLController implements Initializable {
         Tb_People.getItems().clear();
         Tb_People.getColumns().clear();
         Tb_People.getColumns().addAll(nameCol, nickNameCol, emailCol, TeamCol);
-        /*
+        addDatatoPeople();
+        
         //----------------------------------------------------------------------
         // TB_people
         Tb_Teams.getItems().clear();
         Tb_Teams.getColumns().clear();
         Tb_Teams.getColumns().addAll(nameCol, coantryCol, coachCol, playerCol);
+        addDatatoTeams();
         
         
         /** TableColumn dateCol = new TableColumn("Name");
@@ -124,7 +127,8 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void OnSelectTab(Event event) {  
-        getData();                 
+        
+     //   getData();                 
     }
 
     @FXML
@@ -139,19 +143,10 @@ public class FXMLController implements Initializable {
         
         switch(currentTab){
             case 0:
-                ObservableList<Person> PeopleData = FXCollections.observableArrayList();                  
-                dr= data.getPeople();
-                for(String dataString : dr.getData())
-                {
-                    String[] data = dataString.split(dr.SPLIT_String);
-                    Person p = new Person(data[0],data[1],data[2],data[3]); 
-                    //System.out.println(p.getNickname());
-                    PeopleData.add(p);                    
-                }
-                Tb_People.setItems(PeopleData);                
+                           
                 break;
             case 1:
-                        
+                 addDatatoTeams();
                 break;
             case 2:
                 break;
@@ -165,7 +160,17 @@ public class FXMLController implements Initializable {
     }
     public void addDatatoPeople()
     {
-        
+        IDataResult dr;
+        ObservableList<Person> PeopleData = FXCollections.observableArrayList();                  
+         dr= data.getPeople();
+         for(String dataString : dr.getData())
+         {
+             String[] data = dataString.split(dr.SPLIT_String);
+             Person p = new Person(data[0],data[1],data[2],data[3]); 
+             //System.out.println(p.getNickname());
+             PeopleData.add(p);                    
+         }
+         Tb_People.setItems(PeopleData);          
     }
     public void addDatatoTeams()
     {
