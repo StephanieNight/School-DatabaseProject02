@@ -36,7 +36,8 @@ public class PostgreSQLCom implements ISQLCom{
      * Assingment A
      * @return 
      */
-    public IDataResult getCoach() {
+    @Override
+    public IDataResult getCoachAndTeam() {
         IDataResult r = new SQLDataResult();
         try {
             String statement =  "SELECT People.Name AS Coach, Teams.Name AS Team\n" +
@@ -63,7 +64,8 @@ public class PostgreSQLCom implements ISQLCom{
      * Assingment B
      * @return 
      */
-    public IDataResult getPeople() {
+    @Override
+    public IDataResult getPeopleWhoWon() {
         IDataResult r = new SQLDataResult();
         try {
             String statement =  "SELECT People.Name AS People, Teams.Name AS Team, COUNT(Teams.Name) AS Tournamentswon\n" +
@@ -89,7 +91,8 @@ public class PostgreSQLCom implements ISQLCom{
      * Assingment C
      * @return 
      */
-    public IDataResult getTeams() {
+    @Override
+    public IDataResult getTeamsAndPlayerCount() {
         IDataResult r = new SQLDataResult();
         try {
             String statement =  "SELECT Team, COUNT(Player) \n" +
@@ -113,7 +116,8 @@ public class PostgreSQLCom implements ISQLCom{
      * @param number
      * @return 
      */
-    public IDataResult getTournaments(int number) {
+    @Override
+    public IDataResult getTournamentsWithTeams(int number) {
         IDataResult r = new SQLDataResult();
         try {
             
@@ -135,6 +139,7 @@ public class PostgreSQLCom implements ISQLCom{
         }
         return r;
     }
+    @Override
     public IDataResult getWinners() {
         IDataResult r = new SQLDataResult();
         try {
@@ -156,6 +161,23 @@ public class PostgreSQLCom implements ISQLCom{
         }
         return r;
     }
-
-
+    @Override
+    public IDataResult getPeople() {
+           IDataResult r = new SQLDataResult();
+        try {
+            String statement =  "SELECT People.Name,People.Nickname ,People.Email, PlaysFor.Team AS Team\n" +
+                                "FROM People, PlaysFor\n" +
+                                "WHERE People.Email = PlaysFor.Player ";
+            Connection db = DriverManager.getConnection(sqlConnectionString, username, password);
+            PreparedStatement p = db.prepareStatement(statement);
+            ResultSet rs = p.executeQuery();            
+            while (rs.next()) {
+                r.addData(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));//,rs.getString(2),rs.getString(3));
+            }
+            rs.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return r;
+    }
 }

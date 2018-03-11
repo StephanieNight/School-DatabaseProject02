@@ -6,7 +6,6 @@
 package Data;
 
 import Aq.IDataResult;
-import static Aq.IDataResult.SPLIT_CHAR;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,22 +27,22 @@ public class SQLDataResult implements IDataResult{
     @Override
     public void addData(String data01,String data02)
     {
-        addData(data01+SPLIT_CHAR+data02);
+        addData(data01+SPLIT_String+data02);
     }
     @Override
     public void addData(String data01,String data02,String data03)
     {
-        addData(data01,data02+SPLIT_CHAR+data03);
+        addData(data01,data02+SPLIT_String+data03);
     }
     @Override
     public void addData(String data01,String data02,String data03,String data04)
     {
-        addData(data01,data02,data03+SPLIT_CHAR+data04);
+        addData(data01,data02,data03+SPLIT_String+data04);
     }
     @Override
     public void addData(String data01,String data02,String data03,String data04,String data05)
     {
-        addData(data01,data02,data03,data04+SPLIT_CHAR+data05);
+        addData(data01,data02,data03,data04+SPLIT_String+data05);
     }
     @Override
     public Set<String> getData() 

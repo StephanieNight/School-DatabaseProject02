@@ -14,39 +14,35 @@ import Aq.IDataFacade;
  * @author Markb
  */
 public class DataFacade implements IDataFacade {
-
     private ISQLCom SQLCom;
-
     public DataFacade(ISQLCom sqlCommunications) {
         this.SQLCom = sqlCommunications;
     }
-
     public DataFacade() {
         SQLCom = new PostgreSQLCom();
     }
-
+    @Override
     public IDataResult getCoach() {
         System.out.println("DF getCoach");
-        IDataResult r = SQLCom.getCoach();
+        IDataResult r = SQLCom.getCoachAndTeam();
         
         return r;
     }
-
+    @Override
     public IDataResult getPeople() {
         IDataResult r = SQLCom.getPeople();
         return r;
     }
-
+    @Override
     public IDataResult getTeams() {
-        IDataResult r = SQLCom.getTeams();
+        IDataResult r = SQLCom.getTeamsAndPlayerCount();
         return r;
     }
-
+    @Override
     public IDataResult getTournaments() {
-        IDataResult r = SQLCom.getTournaments(2);
+        IDataResult r = SQLCom.getTournamentsWithTeams(2);
         return r;
     }
-
     @Override
     public IDataResult getWinners() {
         IDataResult r = SQLCom.getWinners();

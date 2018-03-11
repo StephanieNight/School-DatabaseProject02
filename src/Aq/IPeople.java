@@ -15,5 +15,8 @@ public interface IPeople {
     public String getNickname();
     public String getEmail();
     public String getTeam();
-    
+    public void setName(String name);
+    public void setNickname(String nickname) ;
+    public void setEmail(String Email);
+    public void setTeam(String Team);
 }
