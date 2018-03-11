@@ -30,6 +30,5 @@ public interface ISQLCom {
      * @return 
      */
     public IDataResult getTournamentsWithTeams(int Participating);
-    public IDataResult getWinners();
     public IDataResult getPeople();
 }

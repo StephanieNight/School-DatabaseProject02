@@ -12,11 +12,26 @@ import java.util.Set;
  * @author Markb
  */
 public interface IDataFacade {
-    
-    public IDataResult getCoach();
+    /**
+     * Assigment A
+     * @return 
+     */
+    public IDataResult getCoachAndTeam();
+    /**
+     * Assigment B
+     * @return 
+     */
+    public IDataResult getPeopleWhoWon();
+    /**
+     * Assigment C
+     * @return 
+     */
+    public IDataResult getTeamsAndPlayerCount();
+    /**
+     * Assignment D plus extra data 
+     * @param n
+     * @return 
+     */
+    public IDataResult getTournamentsWithTeams(int Participating);
     public IDataResult getPeople();
-    public IDataResult getTeams();
-    public IDataResult getTournaments();
-    public IDataResult getWinners();
-    
 }

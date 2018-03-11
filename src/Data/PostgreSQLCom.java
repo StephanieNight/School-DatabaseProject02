@@ -142,30 +142,7 @@ public class PostgreSQLCom implements ISQLCom{
             System.out.println(e);
         }
         return r;
-    }
-    @Override
-    public IDataResult getWinners() {
-        IDataResult r = new SQLDataResult();
-        try {
-            String statement =  "select * from team";
-            Connection db = DriverManager.getConnection(sqlConnectionString, username, password);
-            PreparedStatement p = db.prepareStatement(statement);
-            ResultSet rs = p.executeQuery();
-            //rs.gets
-            while (rs.next()) {
-
-                System.out.print(rs.getString(1) + " ");
-                System.out.println(rs.getString(2) + " ");
-                r.getData().add(rs.getString(1));
-                r.getData().add(rs.getString(2));
-            }
-            db.close();
-            rs.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return r;
-    }
+    }   
     @Override
     public IDataResult getPeople() {
            IDataResult r = new SQLDataResult();

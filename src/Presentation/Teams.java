@@ -5,13 +5,12 @@
  */
 package Presentation;
 
-import Aq.ITeams;
 
 /**
  *
  * @author Stephanie
  */
-public class Teams implements ITeams{
+public class Teams {
     private String name; 
     private String country;
     private String coach;
@@ -23,18 +22,8 @@ public class Teams implements ITeams{
         this.coach = coach;
         this.players = Players;
     }    
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
+    public String getName() {return name;}
     public String getCountry() {return country; }
-
-    @Override
     public String getCoach() {return coach; }
-
-    @Override
-    public String getPlayers() {return players;  }
-    
+    public String getPlayers() {return players;}    
 }

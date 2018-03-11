@@ -22,31 +22,26 @@ public class DataFacade implements IDataFacade {
         SQLCom = new PostgreSQLCom();
     }
     @Override
-    public IDataResult getCoach() {
-        System.out.println("DF getCoach");
-        IDataResult r = SQLCom.getCoachAndTeam();
-        
-        return r;
+    public IDataResult getCoachAndTeam() {
+        return SQLCom.getCoachAndTeam();
+
     }
     @Override
     public IDataResult getPeople() {
-        IDataResult r = SQLCom.getPeople();
-        return r;
+        return SQLCom.getPeople();
+
     }
     @Override
-    public IDataResult getTeams() {
-        IDataResult r = SQLCom.getTeamsAndPlayerCount();
-        return r;
+    public IDataResult getTeamsAndPlayerCount() {
+        return SQLCom.getTeamsAndPlayerCount();
     }
     @Override
-    public IDataResult getTournaments() {
-        IDataResult r = SQLCom.getTournamentsWithTeams(2);
-        return r;
+    public IDataResult getTournamentsWithTeams(int wins) {
+        return SQLCom.getTournamentsWithTeams(wins);
     }
     @Override
-    public IDataResult getWinners() {
-        IDataResult r = SQLCom.getWinners();
-        return r;
+    public IDataResult getPeopleWhoWon() {
+       return  SQLCom.getPeopleWhoWon();
     }
 
     
