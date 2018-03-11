@@ -82,6 +82,7 @@ public class PostgreSQLCom implements ISQLCom{
                 r.addData(rs.getString(1),rs.getString(2),rs.getString(3));              
             }
             rs.close();
+            db.close();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -105,6 +106,7 @@ public class PostgreSQLCom implements ISQLCom{
             while (rs.next()) {
                 r.addData(rs.getString(1),rs.getString(2));
             }
+            db.close();
             rs.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -133,6 +135,7 @@ public class PostgreSQLCom implements ISQLCom{
             while (rs.next()) {
                 r.addData(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));
             }
+            db.close();
             rs.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -155,6 +158,7 @@ public class PostgreSQLCom implements ISQLCom{
                 r.getData().add(rs.getString(1));
                 r.getData().add(rs.getString(2));
             }
+            db.close();
             rs.close();
         } catch (Exception e) {
             System.out.println(e);
@@ -174,6 +178,7 @@ public class PostgreSQLCom implements ISQLCom{
             while (rs.next()) {
                 r.addData(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4));//,rs.getString(2),rs.getString(3));
             }
+            db.close();
             rs.close();
         } catch (Exception e) {
             System.out.println(e);

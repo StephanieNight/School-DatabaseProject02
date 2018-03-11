@@ -76,7 +76,7 @@ public class FXMLController implements Initializable {
         emailCol.setCellValueFactory(new PropertyValueFactory<Person, String>("email"));
         TableColumn TeamCol = new TableColumn("Team");
         TeamCol.setCellValueFactory(new PropertyValueFactory<Person, String>("team"));        
-        TableColumn coantryCol = new TableColumn("Country");
+        /*TableColumn coantryCol = new TableColumn("Country");
         nickNameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("country")); 
         TableColumn coachCol = new TableColumn("Coach");
         emailCol.setCellValueFactory(new PropertyValueFactory<Person, String>("coach"));
@@ -93,9 +93,11 @@ public class FXMLController implements Initializable {
       
         //----------------------------------------------------------------------
         // TB_people
+        */
         Tb_People.getItems().clear();
         Tb_People.getColumns().clear();
         Tb_People.getColumns().addAll(nameCol, nickNameCol, emailCol, TeamCol);
+        /*
         //----------------------------------------------------------------------
         // TB_people
         Tb_Teams.getItems().clear();
@@ -107,7 +109,7 @@ public class FXMLController implements Initializable {
         nameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("name")); 
         TableColumn dateCol = new TableColumn("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory<Person, String>("name")); 
-        */
+        
         
         Tb_People.getColumns().addAll(nameCol, nickNameCol, emailCol, TeamCol);
         //----------------------------------------------------------------------
@@ -117,7 +119,7 @@ public class FXMLController implements Initializable {
         Tb_People.getColumns().clear();
         Tb_People.getColumns().addAll(nameCol, nickNameCol, emailCol, TeamCol);
         
-        
+     */   
 }    
 
     @FXML
@@ -149,16 +151,7 @@ public class FXMLController implements Initializable {
                 Tb_People.setItems(PeopleData);                
                 break;
             case 1:
-                ObservableList<Teams> TeamsData = FXCollections.observableArrayList();
-                dr= data.getTeams();
-                for(String dataString : dr.getData())
-                {
-                    String[] data = dataString.split(dr.SPLIT_String);
-                    Teams p = new Teams(data[0],data[1],data[2],data[3]); 
-                    //System.out.println(p.getNickname());
-                    TeamsData.add(p);                    
-                }
-                Tb_Teams.setItems(TeamsData);               
+                        
                 break;
             case 2:
                 break;
@@ -170,5 +163,35 @@ public class FXMLController implements Initializable {
                 
         }
     }
-    
+    public void addDatatoPeople()
+    {
+        
+    }
+    public void addDatatoTeams()
+    {
+        IDataResult dr;
+        ObservableList<Teams> TeamsData = FXCollections.observableArrayList();
+        dr= data.getTeams();
+        for(String dataString : dr.getData())
+        {
+            String[] data = dataString.split(dr.SPLIT_String);
+            Teams p = new Teams(data[0],data[1],data[2],data[3]); 
+            //System.out.println(p.getNickname());
+            TeamsData.add(p);                    
+        }
+        Tb_Teams.setItems(TeamsData);       
+        
+    } 
+    public void addDatatotournaments()
+    {
+        
+    }
+    public void addDatatoCoaches()
+    {
+        
+    }  
+    public void addDatatowinners()
+    {
+        
+    } 
 }
